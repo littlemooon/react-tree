@@ -17,7 +17,7 @@ var MessageTree = React.createClass({
 
     return (
       <div>
-        <Tree nodes={this.props.nodes} component={MessageTreeItem} componentProps={listProps} childPropertyName='replies'/>
+        <Tree nodes={this.props.nodes} component={MessageTreeItem} componentProps={listProps} childPropertyName='replies' nodeClassName='node'/>
       </div>
     );
   }
@@ -57,12 +57,12 @@ var MessageTreeItem = React.createClass({
       reply = (
         <div>
           <NewMessageItem ref='newMessage'/>
-          <button onClick={this.handleSubmit}>Submit</button>
-          <button onClick={this.handleCancel}>Cancel</button>
+          <button className='button' onClick={this.handleSubmit}>Submit</button>
+          <button className='button' onClick={this.handleCancel}>Cancel</button>
         </div>
       );
     } else if(this.props.data) {
-      reply = <button onClick={this.handleReply}>Reply</button>;
+      reply = <button className='button' onClick={this.handleReply}>Reply</button>;
     }
 
     return (

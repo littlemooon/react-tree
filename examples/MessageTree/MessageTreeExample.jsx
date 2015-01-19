@@ -24,35 +24,27 @@ var MessageTreeExample = React.createClass({
 var data = [
   {
     id: '1',
-    name: 'Alice',
+    name: 'Michael',
     time: '04/05/11 13:04',
-    message: 'Oh, hey guys!',
+    message: 'Who was that? Was that Dad?',
     replies: [
       {
         id: '1.1',
-        name: 'Bob',
+        name: 'Lucille',
         time: '04/05/11 13:15',
-        message: 'Who is this?',
+        message: 'That was Gob',
         replies: [
           {
             id: '1.1.1',
-            name: 'Calvin',
+            name: 'Michael',
             time: '04/05/11 13:28',
-            message: 'Dude, it says... Alice',
-            replies: []
-          },
-          {
-            id: '1.1.2',
-            name: 'Alice',
-            time: '04/05/11 13:37',
-            message: 'I am Spartacus.',
-            replies: []
+            message: 'Uh-huh'
           }
         ]
       },
       {
         id: '1.2',
-        name: 'Calvin',
+        name: 'Michael',
         time: '04/05/11 13:21',
         message: 'Aw yeaaahh. In the mix.',
         replies: []

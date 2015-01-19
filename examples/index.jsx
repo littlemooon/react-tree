@@ -2,24 +2,28 @@
 
 var React = require('react');
 
-var SimpleListExample = require('./SimpleList/SimpleListExample');
-var SimpleTreeExample = require('./SimpleTree/SimpleTreeExample');
-var MessageListExample = require('./MessageList/MessageListExample');
-var MessageTreeExample = require('./MessageTree/MessageTreeExample');
+require('./style.css');
+
+var SimpleListExample = require('./SimpleList/SimpleListExample'),
+    SimpleTreeExample = require('./SimpleTree/SimpleTreeExample'),
+    MessageListExample = require('./MessageList/MessageListExample'),
+    MessageTreeExample = require('./MessageTree/MessageTreeExample');
 
 var Examples = React.createClass({
   render: function() {
     return (
       <div>
-        <hr/>
+        <h1>Simple List</h1>
         <SimpleListExample/>
-        <hr/>
+
+        <h1>Simple Tree</h1>
         <SimpleTreeExample/>
-        <hr/>
+
+        <h1>Message List</h1>
         <MessageListExample/>
-        <hr/>
+
+        <h1>Message Tree</h1>
         <MessageTreeExample/>
-        <hr/>
       </div>
     );
   }

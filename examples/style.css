@@ -1,0 +1,36 @@
+html {
+  font-size: 12px;
+  font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "TeXGyreHerosRegular", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+}
+body {
+  margin: 6em 10em;
+}
+
+h1 {
+  margin-bottom: 2em;
+}
+h1:not(:first-child) {
+  margin-top: 3em;
+  padding-top: 3em;
+  border-top: 1px solid #888;
+}
+
+input {
+  text-indent: 1em;
+}
+
+.node .node {
+  padding-left: 2em; 
+  margin-left: 1em;
+  border-left: 1px solid #888;
+}
+
+.button, input {
+  height: 2em;
+  margin-right: 1em;
+  border: 1px solid #888;
+  background-color: #fff;
+}
+.button {
+  height: 2.333333333em;
+}

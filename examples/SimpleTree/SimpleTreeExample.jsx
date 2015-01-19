@@ -8,7 +8,7 @@ var SimpleTreeExample = React.createClass({
   render: function() {
     // render the tree using mock nested data and the simple component
     return (
-      <Tree nodes={data} component={Quote}/>
+      <Tree nodes={data} component={Quote} nodeClassName='node'/>
     );
   }
 });
@@ -36,40 +36,46 @@ var Quote = React.createClass({
 // mock nested data using default 'children' property
 var data = [
   {
-    name: 'Tony Montana',
-    quote: 'Say hello to my little friend',
+    name: 'George-Michael',
+    quote: 'You think hes going to announce it on the boat?',
     children: [
       {
-        name: 'Charles Foster Kane',
-        quote: 'Rosebud',
+        name: 'Michael',
+        quote: 'Abolutely. Its his retirement party. Plus, hes been dropping a lot of hints'
+      },
+      {
+        name: 'George-Michael',
+        quote: 'What kind of hints?',
         children: [
           {
-            name: 'Charles Foster Kane',
-            quote: 'Rosebud'
-          },
-          {
-            name: 'Don Corleone',
-            quote: 'Im gonna make him an offer he cant refuse'
+            name: 'Michael',
+            quote: 'Well, hes been calling me "pod ner"'
           }
         ]
       },
       {
-        name: 'Don Corleone',
-        quote: 'Im gonna make him an offer he cant refuse'
+        name: 'Michael',
+        quote: 'And I dont think its just because hes going through his "cowboy" phase'
       }
     ]
   },
   {
-    name: 'Charles Foster Kane',
-    quote: 'Rosebud'
-  },
-  {
-    name: 'Don Corleone',
-    quote: 'Im gonna make him an offer he cant refuse',
-    replies: [
+    name: 'Tobias',
+    quote: 'Michael! How are you?',
+    children: [
       {
-        name: 'Charles Foster Kane',
-        quote: 'Rosebud'
+        name: 'Michael',
+        quote: 'Im good, Tobias. Hows the job search coming along?',
+        children: [
+          {
+            name: 'Tobias',
+            quote: 'Well, Im hoping the universe will provide a path for me'
+          }
+        ]
+      },
+      {
+        name: 'Michael',
+        quote: 'Well, who knows, maybe youll be inspired by the boat party and start a career as a pirate'
       }
     ]
   }

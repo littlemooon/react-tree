@@ -8,32 +8,32 @@ var MessageListExample = React.createClass({
 
   onSubmit: function(text) {
     data.push({
-      name: 'Bob',
-      time: '04/05/11 13:45',
+      name: 'Michael',
+      time: '04/05/11 13:37',
       message: text
     });
   },
 
   render: function() {
-    return <MessageList items={data} onSubmit={this.onSubmit} username='Bob'/>;
+    return <MessageList items={data} onSubmit={this.onSubmit}/>;
   }
 });
 
 var data = [
   {
-    name: 'Alice',
+    name: 'Michael',
     time: '04/05/11 13:04',
-    message: 'Oh, hey!'
+    message: 'Lindsay, how was your flight?'
   },
   {
-    name: 'Bob',
-    time: '04/05/11 13:15',
-    message: 'Who is this?'
+    name: 'Lindsay',
+    time: '04/05/11 13:05',
+    message: 'Great. We just got in--'
   },
   {
-    name: 'Alice',
-    time: '04/05/11 13:37',
-    message: 'I am Spartacus.'
+    name: 'Lucille',
+    time: '04/05/11 13:05',
+    message: 'He knows'
   }
 ];
 

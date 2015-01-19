@@ -8,7 +8,7 @@ var ListExample = React.createClass({
   render: function() {
     // render the tree using mock data and the simple component
     return (
-      <Tree nodes={data} component={Quote}/>
+      <Tree nodes={data} component={Quote} nodeClassName='node'/>
     );
   }
 });
@@ -36,16 +36,16 @@ var Quote = React.createClass({
 // mock data
 var data = [
   {
-    name: 'Tony Montana',
-    quote: 'Say hello to my little friend'
+    name: 'Michael',
+    quote: 'So, this is a magic trick, huh?'
   },
   {
-    name: 'Charles Foster Kane',
-    quote: 'Rosebud'
+    name: 'Gob',
+    quote: '"Illusion", Michael. A "trick" is something a whore does for money'
   },
   {
-    name: 'Don Corleone',
-    quote: 'Im gonna make him an offer he cant refuse'
+    name: 'Gob',
+    quote: '... or candy!'
   }
 ];
 

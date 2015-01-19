@@ -33,17 +33,17 @@ var MessageList = React.createClass({
       reply = (
         <div>
           <NewMessageItem ref='newMessage'/>
-          <button onClick={this.handleSubmit}>Submit</button>
-          <button onClick={this.handleCancel}>Cancel</button>
+          <button className='button' onClick={this.handleSubmit}>Submit</button>
+          <button className='button' onClick={this.handleCancel}>Cancel</button>
         </div>
       );
     } else {
-      reply = <button onClick={this.handleReply}>Reply</button>;
+      reply = <button className='button' onClick={this.handleReply}>Reply</button>;
     }
 
     return (
       <div>
-        <Tree nodes={this.props.items} component={MessageItem} childPropertyName='replies'/>
+        <Tree nodes={this.props.items} component={MessageItem} childPropertyName='replies' nodeClassName='node'/>
         {reply}
       </div>
     );

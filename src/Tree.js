@@ -17,22 +17,24 @@ var Tree = React.createClass({
   },
 
   render: function() {
-    var style = {paddingLeft: '10px', marginLeft: '20px', borderLeft: '1px solid'};
+    var p = this.props;
     return (
-      React.DOM.div({className: this.props.treeClassName}, 
+      React.DOM.div({className: p.treeClassName}, 
         // loop through the lowest level of nodes
-        this.props.nodes.map(function(node, i) {
+        p.nodes.map(function(node, i) {
+          
           // get the child nodes
-          var children = node[this.props.childPropertyName] || node['children'];
+          var children = node[p.childPropertyName] || node.children;
           // merge the node data with the props passed in for the component
           var props = {data: node};
-          for (var key in this.props.componentProps) { props[key] = this.props.componentProps[key]; }
+          for (var key in p.componentProps) { props[key] = p.componentProps[key]; }
+          
           return (
-            React.DOM.div({style: style, key: i, className: this.props.nodeClassName}, 
+            React.DOM.div({key: i, className: p.nodeClassName}, 
               // create the passed in component using merged props
-              React.createElement(this.props.component, props), 
+              React.createElement(p.component, props), 
               // if we have children, create a new tree of children
-              children ? React.createElement(Tree, {nodes: children, component: this.props.component, componentProps: this.props.componentProps, childPropertyName: this.props.childPropertyName}) : null
+              children ? React.createElement(Tree, {nodes: children, component: p.component, componentProps: p.componentProps, childPropertyName: p.childPropertyName, nodeClassName: p.nodeClassName}) : null
             )
           );
         }.bind(this))
