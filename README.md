@@ -1,2 +1,2 @@
-# react-component-tree
-React - nestable tree of components
+# react-tree
+React - Nestable tree of externally defined components

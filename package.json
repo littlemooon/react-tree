@@ -1,0 +1,33 @@
+{
+  "name": "react-tree",
+  "version": "0.0.1",
+  "description": "React - Nestable tree of externally defined components",
+  "main": "src/Tree.js",
+  "scripts": {
+    "start": "npm run serve | npm run dev",
+    "serve": "./node_modules/.bin/http-server -p 8080",
+    "dev": "webpack-dev-server --progress --colors --port 8090"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fredwright/react-tree.git"
+  },
+  "keywords": [
+    "react",
+    "ui",
+    "tree",
+    "react-component",
+    "nodes"
+  ],
+  "author": "Fred Wright",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.12.2"
+  },
+  "devDependencies": {
+    "webpack": "^1.5.1",
+    "webpack-dev-server": "^1.7.0",
+    "jsx-loader": "^0.12.2",
+    "http-server": "^0.7.4"
+  }
+}
