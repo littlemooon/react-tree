@@ -7,8 +7,7 @@ var Tree = require('../../src/Tree');
 var MessageList = React.createClass({
   propTypes: {
     items: React.PropTypes.array.isRequired,
-    onSubmit: React.PropTypes.func.isRequired,
-    username: React.PropTypes.string.isRequired
+    onSubmit: React.PropTypes.func.isRequired
   },
   
   getInitialState: function() {    

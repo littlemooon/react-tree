@@ -26,7 +26,7 @@ var MessageTree = React.createClass({
 var MessageTreeItem = React.createClass({
   propTypes: {
     data: React.PropTypes.shape({
-      id: React.PropTypes.string.isRequired,
+      id: React.PropTypes.number.isRequired,
       name: React.PropTypes.string.isRequired,
       time: React.PropTypes.string.isRequired,
       message: React.PropTypes.string.isRequired,

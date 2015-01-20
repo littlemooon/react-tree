@@ -5,62 +5,82 @@ var React = require('react');
 var MessageTree = require('./MessageTree');
 
 var MessageTreeExample = React.createClass({
+  getInitialState: function() {
+    return {
+      data: initialData,
+      nextId: 6
+    };
+  },
 
   onSubmit: function(id, text) {
     var newMessage = {
-      id: '123',
-      name: 'Bob',
-      time: '04/05/11 13:45',
+      id: this.state.nextId,
+      name: 'Michael',
+      time: '04/05/11 13:37',
       message: text
     };
-    updateData(data, id, newMessage);
+    this.setState({
+      data: addMessageToId(this.state.data, id, newMessage),
+      nextId: this.state.nextId+1
+    });
   },
 
   render: function() {
-    return <MessageTree nodes={data} submit={this.onSubmit}/>;
+    return <MessageTree nodes={this.state.data} submit={this.onSubmit}/>;
   }
 });
 
-var data = [
+var initialData = [
   {
-    id: '1',
-    name: 'Michael',
+    id: 1,
+    name: 'George-Michael',
     time: '04/05/11 13:04',
-    message: 'Who was that? Was that Dad?',
+    message: 'You think hes going to announce it on the boat?',
     replies: [
       {
-        id: '1.1',
-        name: 'Lucille',
-        time: '04/05/11 13:15',
-        message: 'That was Gob',
+        id: 2,
+        name: 'Michael',
+        time: '04/05/11 13:04',
+        message: 'Abolutely. Its his retirement party. Plus, hes been dropping a lot of hints'
+      },
+      {
+        id: 3,
+        name: 'George-Michael',
+        time: '04/05/11 13:04',
+        message: 'What kind of hints?',
         replies: [
           {
-            id: '1.1.1',
+            id: 4,
             name: 'Michael',
-            time: '04/05/11 13:28',
-            message: 'Uh-huh'
+            time: '04/05/11 13:05',
+            message: 'Well, hes been calling me "podner"'
           }
         ]
       },
       {
-        id: '1.2',
+        id: 5,
         name: 'Michael',
-        time: '04/05/11 13:21',
-        message: 'Aw yeaaahh. In the mix.',
-        replies: []
+        time: '04/05/11 13:05',
+        message: 'And I dont think its just because hes going through his "cowboy" phase'
       }
     ]
   }
 ];
 
-var updateData = function(data, id, message) {
+var addMessageToId = function(data, id, message) {
+  var array = [];
+  var node;
   for (var key in data) {
-    if(data[key].id === id) {
-      data[key].replies.push(message);
+    node = data[key];
+    if(node.id === id) {
+      node.replies = node.replies || [];
+      node.replies.push(message);
     } else {
-      return updateData(id, data[key].replies);
+      node.replies = addMessageToId(node.replies, id, message);
     }
+    array.push(node);
   }
+  return array;
 }
 
 module.exports = MessageTreeExample;

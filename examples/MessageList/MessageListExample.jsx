@@ -28,7 +28,7 @@ var data = [
   {
     name: 'Lindsay',
     time: '04/05/11 13:05',
-    message: 'Great. We just got in--'
+    message: 'Great. We just got in...'
   },
   {
     name: 'Lucille',

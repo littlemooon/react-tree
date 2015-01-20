@@ -36,30 +36,6 @@ var Quote = React.createClass({
 // mock nested data using default 'children' property
 var data = [
   {
-    name: 'George-Michael',
-    quote: 'You think hes going to announce it on the boat?',
-    children: [
-      {
-        name: 'Michael',
-        quote: 'Abolutely. Its his retirement party. Plus, hes been dropping a lot of hints'
-      },
-      {
-        name: 'George-Michael',
-        quote: 'What kind of hints?',
-        children: [
-          {
-            name: 'Michael',
-            quote: 'Well, hes been calling me "pod ner"'
-          }
-        ]
-      },
-      {
-        name: 'Michael',
-        quote: 'And I dont think its just because hes going through his "cowboy" phase'
-      }
-    ]
-  },
-  {
     name: 'Tobias',
     quote: 'Michael! How are you?',
     children: [
