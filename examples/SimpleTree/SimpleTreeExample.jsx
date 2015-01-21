@@ -4,6 +4,8 @@ var React = require('react');
 
 var Tree = require('../../src/Tree');
 
+var SimpleTreeItem = require('./SimpleTreeItem');
+
 var SimpleTreeExample = React.createClass({
   render: function() {
     // render the tree using mock nested data and the simple component

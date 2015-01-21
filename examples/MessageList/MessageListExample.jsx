@@ -5,21 +5,29 @@ var React = require('react');
 var MessageList = require('./MessageList');
 
 var MessageListExample = React.createClass({
+  getInitialState: function() {
+    return {
+      data: initialData
+    };
+  },
 
-  onSubmit: function(text) {
-    data.push({
+  _onSubmit: function(text) {
+    var newMessage = {
       name: 'Michael',
       time: '04/05/11 13:37',
       message: text
+    };
+    this.setState({
+      data: addMessage(this.state.data, newMessage)
     });
   },
 
   render: function() {
-    return <MessageList items={data} onSubmit={this.onSubmit}/>;
+    return <MessageList items={this.state.data} onSubmit={this._onSubmit}/>;
   }
 });
 
-var data = [
+var initialData = [
   {
     name: 'Michael',
     time: '04/05/11 13:04',
@@ -36,5 +44,10 @@ var data = [
     message: 'He knows'
   }
 ];
+
+var addMessage = function(data, message) {
+  data.push(message);
+  return data;
+}
 
 module.exports = MessageListExample;

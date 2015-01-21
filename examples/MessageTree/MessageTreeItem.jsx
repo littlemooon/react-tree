@@ -2,15 +2,17 @@
 
 var React = require('react');
 
-var Tree = require('../../src/Tree');
+var MessageTreeItemNew = require('./MessageTreeItemNew');
 
-var MessageListItem = require('./MessageListItem'),
-    MessageListItemNew = require('./MessageListItemNew');
-
-var MessageList = React.createClass({
+var MessageTreeItem = React.createClass({
   propTypes: {
-    items: React.PropTypes.array.isRequired,
-    onSubmit: React.PropTypes.func.isRequired
+    data: React.PropTypes.shape({
+      id: React.PropTypes.number.isRequired,
+      name: React.PropTypes.string.isRequired,
+      time: React.PropTypes.string.isRequired,
+      message: React.PropTypes.string.isRequired,
+      replies: React.PropTypes.array
+    }).isRequired
   },
   
   getInitialState: function() {    
@@ -21,7 +23,7 @@ var MessageList = React.createClass({
     this.setState({replying: true});
   },
   _handleSubmit: function() {
-    this.props.onSubmit(this.refs.newMessage.refs.text.getDOMNode().value);
+    this.props.submit(this.props.data.id, this.refs.newMessage.refs.text.getDOMNode().value);
     this.setState({replying: false});
   },
   _handleCancel: function() {
@@ -29,27 +31,30 @@ var MessageList = React.createClass({
   },
 
   render: function() {
+    var d = this.props.data;
     var reply = null;
 
     if(this.state.replying) {
       reply = (
         <div>
-          <MessageListItemNew ref='newMessage'/>
+          <MessageTreeItemNew ref='newMessage'/>
           <button className='button' onClick={this._handleSubmit}>Submit</button>
           <button className='button' onClick={this._handleCancel}>Cancel</button>
         </div>
       );
-    } else {
+    } else if(this.props.data) {
       reply = <button className='button' onClick={this._handleReply}>Reply</button>;
     }
 
     return (
       <div>
-        <Tree nodes={this.props.items} component={MessageListItem} childPropertyName='replies' nodeClassName='node'/>
+        <h3>{d.name}</h3>
+        <p>{d.time}</p>
+        <p>{d.message}</p>
         {reply}
       </div>
     );
   }
 });
 
-module.exports = MessageList;
+module.exports = MessageTreeItem;
