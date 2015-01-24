@@ -6,37 +6,30 @@ var Tree = require('../../src/Tree');
 
 var SimpleTreeItem = require('./SimpleTreeItem');
 
+/*
+ * Nested tree of data
+ */
 var SimpleTreeExample = React.createClass({
-  render: function() {
-    // render the tree using mock nested data and the simple component
-    return (
-      <Tree nodes={data} component={Quote} nodeClassName='node'/>
-    );
-  }
-});
-
-// simple component to render for each node
-var Quote = React.createClass({
-  propTypes: {
-    // data for each node passed in by the tree
-    data: React.PropTypes.shape({
-      name: React.PropTypes.string.isRequired,
-      quote: React.PropTypes.string
-    }).isRequired,
+  getInitialState: function() {
+    return { data: initialData };
   },
 
   render: function() {
+    // render the tree using mock nested data and the simple component
     return (
-      <div>
-        <h3>{this.props.data.name}</h3>
-        <p>{this.props.data.quote}</p>
-      </div>
+      <Tree 
+        nodes={this.state.data} 
+        component={SimpleTreeItem} 
+        nodeClassName='node'/>
     );
   }
 });
 
-// mock nested data using default 'children' property
-var data = [
+
+/*
+ * Mock nested data using default 'children' child property
+ */
+var initialData = [
   {
     name: 'Tobias',
     quote: 'Michael! How are you?',

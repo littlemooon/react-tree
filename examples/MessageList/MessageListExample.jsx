@@ -4,6 +4,9 @@ var React = require('react');
 
 var MessageList = require('./MessageList');
 
+/*
+ * Component to render a list of messages
+ */
 var MessageListExample = React.createClass({
   getInitialState: function() {
     return {
@@ -11,6 +14,7 @@ var MessageListExample = React.createClass({
     };
   },
 
+  // add new message text to the list of data
   _onSubmit: function(text) {
     var newMessage = {
       name: 'Michael',
@@ -23,10 +27,18 @@ var MessageListExample = React.createClass({
   },
 
   render: function() {
-    return <MessageList items={this.state.data} onSubmit={this._onSubmit}/>;
+    return (
+      <MessageList 
+        items={this.state.data} 
+        onSubmit={this._onSubmit}/>
+    );
   }
 });
 
+
+/*
+ * Mock nested data using overridden 'replies' child property
+ */
 var initialData = [
   {
     name: 'Michael',
@@ -45,6 +57,10 @@ var initialData = [
   }
 ];
 
+
+/*
+ * Add message to data array
+ */
 var addMessage = function(data, message) {
   data.push(message);
   return data;

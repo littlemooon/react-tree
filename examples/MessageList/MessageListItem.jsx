@@ -2,8 +2,12 @@
 
 var React = require('react');
 
+/*
+ * Component to render for each node
+ */
 var MessageListItem = React.createClass({
   propTypes: {
+    // data for each node passed in by the tree
     data: React.PropTypes.shape({
       name: React.PropTypes.string.isRequired,
       time: React.PropTypes.string.isRequired,

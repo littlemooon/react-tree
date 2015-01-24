@@ -4,8 +4,12 @@ var React = require('react');
 
 var MessageTreeItemNew = require('./MessageTreeItemNew');
 
+/*
+ * Component to render for each node
+ */
 var MessageTreeItem = React.createClass({
   propTypes: {
+    // data for each node passed in by the tree
     data: React.PropTypes.shape({
       id: React.PropTypes.number.isRequired,
       name: React.PropTypes.string.isRequired,

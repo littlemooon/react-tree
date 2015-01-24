@@ -6,16 +6,23 @@ var Tree = require('../../src/Tree');
 
 var SimpleListItem = require('./SimpleListItem');
 
+/*
+ * List of data
+ */
 var SimpleListExample = React.createClass({
   render: function() {
-    // render the tree using mock data and the simple component
     return (
-      <Tree nodes={data} component={SimpleListItem} nodeClassName='node'/>
+      <Tree 
+        nodes={data} 
+        component={SimpleListItem} 
+        nodeClassName='node'/>
     );
   }
 });
 
-// mock data
+/*
+ * Mock array of data
+ */
 var data = [
   {
     name: 'Michael',

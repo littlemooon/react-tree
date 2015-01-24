@@ -4,6 +4,9 @@ var React = require('react');
 
 var MessageTree = require('./MessageTree');
 
+/*
+ * Component to render a nested tree of messages
+ */
 var MessageTreeExample = React.createClass({
   getInitialState: function() {
     return {
@@ -12,24 +15,34 @@ var MessageTreeExample = React.createClass({
     };
   },
 
-  onSubmit: function(id, text) {
+  // add new message text to the nested data
+  _onSubmit: function(id, text) {
     var newMessage = {
       id: this.state.nextId,
       name: 'Michael',
       time: '04/05/11 13:37',
       message: text
     };
+
     this.setState({
       data: addMessageToId(this.state.data, id, newMessage),
-      nextId: this.state.nextId+1
+      nextId: this.state.nextId++
     });
   },
 
   render: function() {
-    return <MessageTree nodes={this.state.data} submit={this.onSubmit}/>;
+    return (
+      <MessageTree 
+        nodes={this.state.data} 
+        submit={this._onSubmit}/>
+    );
   }
 });
 
+
+/*
+ * Mock nested data using overridden 'replies' child property
+ */
 var initialData = [
   {
     id: 1,
@@ -67,6 +80,10 @@ var initialData = [
   }
 ];
 
+
+/*
+ * Loop through data, find id and add message
+ */
 var addMessageToId = function(data, id, message) {
   var array = [];
   var node;
