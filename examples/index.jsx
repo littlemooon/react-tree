@@ -4,27 +4,23 @@ var React = require('react');
 
 require('./style.css');
 
-var SimpleListExample = require('./SimpleList/SimpleListExample'),
-    SimpleTreeExample = require('./SimpleTree/SimpleTreeExample'),
-    SimpleCollapsableTreeExample = require('./SimpleCollapsableTree/SimpleCollapsableTreeExample'),
-    MessageListExample = require('./MessageList/MessageListExample'),
-    MessageTreeExample = require('./MessageTree/MessageTreeExample');
+var ListExample = require('./1_List/ListExample'),
+    TreeExample = require('./2_Tree/TreeExample'),
+    CollapsableTreeExample = require('./3_CollapsableTree/CollapsableTreeExample'),
+    MessageTreeExample = require('./4_MessageTree/MessageTreeExample');
 
 var Examples = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Simple List</h1>
-        <SimpleListExample/>
+        <h1>List</h1>
+        <ListExample/>
 
-        <h1>Simple Tree</h1>
-        <SimpleTreeExample/>
+        <h1>Tree</h1>
+        <TreeExample/>
 
-        <h1>Simple Collapsable Tree</h1>
-        <SimpleCollapsableTreeExample/>
-
-        <h1>Message List</h1>
-        <MessageListExample/>
+        <h1>Collapsable Tree</h1>
+        <CollapsableTreeExample/>
 
         <h1>Message Tree</h1>
         <MessageTreeExample/>

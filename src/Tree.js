@@ -63,11 +63,11 @@ var TreeNode = React.createClass({
     nodeClassName: React.PropTypes.string
   },
 
-  getDefaultProps: function() {
-    return {childPropertyName: 'children'};
-  },
   getInitialState: function() {
     return {collapsed: false};
+  },
+  getDefaultProps: function() {
+    return {childPropertyName: 'children'};
   },
 
   _handleCollapse: function() {

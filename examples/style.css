@@ -15,7 +15,15 @@ h1:not(:first-child) {
   border-top: 1px solid #888;
 }
 
+p {
+  max-width: 40em;
+}
+
 input {
+  height: 2em;
+  margin-right: 1em;
+  border: 1px solid #888;
+  background-color: #fff;
   text-indent: 1em;
 }
 
@@ -25,16 +33,11 @@ input {
   border-left: 1px solid #888;
 }
 
-input {
-  height: 2em;
-  margin-right: 1em;
-  border: 1px solid #888;
-  background-color: #fff;
-}
 .button {
-  height: 2.333333333em;
   background-color: transparent;
   border-width: 0;
+  padding: 0 1em 0 0;
+  text-decoration: underline;
 }
 .button:hover, .button:active, .button:focus {
   color: red;
@@ -44,6 +47,4 @@ input {
   background-color: transparent;
   border-width: 0;
   color: red;
-  font-size: 1.5em;
-  line-height: 1.5em;
 }

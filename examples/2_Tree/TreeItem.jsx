@@ -5,8 +5,8 @@ var React = require('react');
 /*
  * Component to render for each node
  */
-var SimpleListItem = React.createClass({
-  displayName: 'SimpleListItem',
+var TreeItem = React.createClass({
+  displayName: 'TreeItem',
   propTypes: {
     // data for each node passed in by the tree
     data: React.PropTypes.shape({
@@ -26,4 +26,4 @@ var SimpleListItem = React.createClass({
   }
 });
 
-module.exports = SimpleListItem;
+module.exports = TreeItem;

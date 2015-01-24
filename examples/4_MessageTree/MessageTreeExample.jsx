@@ -26,7 +26,7 @@ var MessageTreeExample = React.createClass({
 
     this.setState({
       data: addMessageToId(this.state.data, id, newMessage),
-      nextId: this.state.nextId++
+      nextId: this.state.nextId+1
     });
   },
 

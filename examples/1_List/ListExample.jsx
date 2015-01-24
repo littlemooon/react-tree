@@ -4,17 +4,17 @@ var React = require('react');
 
 var Tree = require('../../src/Tree');
 
-var SimpleListItem = require('./SimpleListItem');
+var ListItem = require('./ListItem');
 
 /*
  * List of data
  */
-var SimpleListExample = React.createClass({
+var ListExample = React.createClass({
   render: function() {
     return (
       <Tree 
         nodes = {data} 
-        component = {SimpleListItem} 
+        component = {ListItem} 
         nodeClassName = 'node'/>
     );
   }
@@ -38,4 +38,4 @@ var data = [
   }
 ];
 
-module.exports = SimpleListExample;
+module.exports = ListExample;

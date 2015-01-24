@@ -5,8 +5,8 @@ var React = require('react');
 /*
  * Component to render for each node
  */
-var SimpleCollapsableTreeItem = React.createClass({
-  displayName: 'SimpleCollapsableTreeItem',
+var CollapsableTreeItem = React.createClass({
+  displayName: 'CollapsableTreeItem',
   propTypes: {
     // data for each node passed in by the tree
     data: React.PropTypes.shape({
@@ -59,4 +59,4 @@ var SimpleCollapsableTreeItem = React.createClass({
   }
 });
 
-module.exports = SimpleCollapsableTreeItem;
+module.exports = CollapsableTreeItem;
