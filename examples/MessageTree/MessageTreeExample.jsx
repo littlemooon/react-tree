@@ -33,8 +33,8 @@ var MessageTreeExample = React.createClass({
   render: function() {
     return (
       <MessageTree 
-        nodes={this.state.data} 
-        submit={this._onSubmit}/>
+        nodes = {this.state.data} 
+        submit = {this._onSubmit}/>
     );
   }
 });

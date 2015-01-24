@@ -13,9 +13,9 @@ var SimpleListExample = React.createClass({
   render: function() {
     return (
       <Tree 
-        nodes={data} 
-        component={SimpleListItem} 
-        nodeClassName='node'/>
+        nodes = {data} 
+        component = {SimpleListItem} 
+        nodeClassName = 'node'/>
     );
   }
 });
@@ -34,7 +34,7 @@ var data = [
   },
   {
     name: 'Gob',
-    quote: '... or candy!'
+    quote: '... or candy'
   }
 ];
 

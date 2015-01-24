@@ -25,11 +25,11 @@ var MessageTree = React.createClass({
 
     return (
       <Tree 
-        nodes={this.props.nodes} 
-        component={MessageTreeItem} 
-        componentProps={listProps} 
-        childPropertyName='replies' 
-        nodeClassName='node'/>
+        nodes = {this.props.nodes} 
+        component = {MessageTreeItem} 
+        componentProps = {listProps} 
+        childPropertyName = 'replies' 
+        nodeClassName = 'node'/>
     );
   }
 });

@@ -6,6 +6,7 @@ var React = require('react');
  * Component to render for each node
  */
 var MessageListItem = React.createClass({
+  displayName: 'MessageListItem',
   propTypes: {
     // data for each node passed in by the tree
     data: React.PropTypes.shape({

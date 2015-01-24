@@ -25,7 +25,7 @@ input {
   border-left: 1px solid #888;
 }
 
-.button, input {
+input {
   height: 2em;
   margin-right: 1em;
   border: 1px solid #888;
@@ -33,4 +33,17 @@ input {
 }
 .button {
   height: 2.333333333em;
+  background-color: transparent;
+  border-width: 0;
+}
+.button:hover, .button:active, .button:focus {
+  color: red;
+}
+
+.collapse {
+  background-color: transparent;
+  border-width: 0;
+  color: red;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }

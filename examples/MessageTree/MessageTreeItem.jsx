@@ -8,6 +8,7 @@ var MessageTreeItemNew = require('./MessageTreeItemNew');
  * Component to render for each node
  */
 var MessageTreeItem = React.createClass({
+  displayName: 'MessageTreeItemNew',
   propTypes: {
     // data for each node passed in by the tree
     data: React.PropTypes.shape({
@@ -16,7 +17,13 @@ var MessageTreeItem = React.createClass({
       time: React.PropTypes.string.isRequired,
       message: React.PropTypes.string.isRequired,
       replies: React.PropTypes.array
-    }).isRequired
+    }).isRequired,
+    // true if this node collapsable
+    collapsable: React.PropTypes.bool,
+    // true if this node is collapsed
+    collapsed: React.PropTypes.bool,
+    // toggle collapse state
+    onCollapse: React.PropTypes.func
   },
   
   getInitialState: function() {    
@@ -35,8 +42,22 @@ var MessageTreeItem = React.createClass({
   },
 
   render: function() {
-    var d = this.props.data;
+    var p = this.props;
+    var d = p.data;
     var reply = null;
+    var node = null;
+    var collapse = null;
+
+    // if we are collapsable create a button
+    if(p.collapsable) {
+      collapse = (
+        <button 
+          className = 'collapse'
+          onClick = {p.onCollapse}>
+          {p.collapsed? '+' : '-'}
+        </button>
+      );
+    }
 
     if(this.state.replying) {
       reply = (
@@ -46,18 +67,29 @@ var MessageTreeItem = React.createClass({
           <button className='button' onClick={this._handleCancel}>Cancel</button>
         </div>
       );
-    } else if(this.props.data) {
+    } else {
       reply = <button className='button' onClick={this._handleReply}>Reply</button>;
     }
 
-    return (
+    if(p.collapsed) {
+      node = (
       <div>
-        <h3>{d.name}</h3>
+        <h3>{d.name} {collapse}</h3>
+        <p>{d.time}</p>
+      </div>
+    );
+    } else {
+      node = (
+      <div>
+        <h3>{d.name} {collapse}</h3>
         <p>{d.time}</p>
         <p>{d.message}</p>
         {reply}
       </div>
     );
+    }
+
+    return node;
   }
 });
 

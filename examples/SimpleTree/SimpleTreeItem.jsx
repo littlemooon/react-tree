@@ -6,6 +6,7 @@ var React = require('react');
  * Component to render for each node
  */
 var SimpleTreeItem = React.createClass({
+  displayName: 'SimpleTreeItem',
   propTypes: {
     // data for each node passed in by the tree
     data: React.PropTypes.shape({

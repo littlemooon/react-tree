@@ -4,12 +4,12 @@ var React = require('react');
 
 var Tree = require('../../src/Tree');
 
-var SimpleTreeItem = require('./SimpleTreeItem');
+var SimpleCollapsableTreeItem = require('./SimpleCollapsableTreeItem');
 
 /*
- * Nested tree of data
+ * Collapsable nested tree of data
  */
-var SimpleTreeExample = React.createClass({
+var SimpleCollapsableTreeExample = React.createClass({
   getInitialState: function() {
     return { data: initialData };
   },
@@ -19,7 +19,7 @@ var SimpleTreeExample = React.createClass({
     return (
       <Tree 
         nodes = {this.state.data} 
-        component = {SimpleTreeItem} 
+        component = {SimpleCollapsableTreeItem} 
         nodeClassName = 'node'/>
     );
   }
@@ -52,4 +52,4 @@ var initialData = [
   }
 ];
 
-module.exports = SimpleTreeExample;
+module.exports = SimpleCollapsableTreeExample;

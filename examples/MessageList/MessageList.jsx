@@ -54,10 +54,10 @@ var MessageList = React.createClass({
     return (
       <div>
         <Tree 
-          nodes={this.props.items} 
-          component={MessageListItem} 
-          childPropertyName='replies' 
-          nodeClassName='node'/>
+          nodes = {this.props.items} 
+          component = {MessageListItem} 
+          childPropertyName = 'replies' 
+          nodeClassName = 'node'/>
         {reply}
       </div>
     );

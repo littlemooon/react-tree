@@ -29,15 +29,15 @@ var MessageListExample = React.createClass({
   render: function() {
     return (
       <MessageList 
-        items={this.state.data} 
-        onSubmit={this._onSubmit}/>
+        items = {this.state.data} 
+        onSubmit = {this._onSubmit}/>
     );
   }
 });
 
 
 /*
- * Mock nested data using overridden 'replies' child property
+ * Mock array of data
  */
 var initialData = [
   {
